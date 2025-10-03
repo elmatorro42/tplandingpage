@@ -15,35 +15,34 @@
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
-      background: #f9f9f9;
+      background: #d6edf5;
       color: #222;
     }
 
     /* HEADER */
-    .header {
+    header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 15px 30px;
-      background: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      background: #cde7f3;
     }
 
-    .header .logo {
-      font-size: 20px;
+    header .logo {
+      font-size: 22px;
       font-weight: bold;
     }
 
-    .nav a {
+    nav a {
       margin: 0 10px;
       text-decoration: none;
       color: #222;
+      font-weight: 500;
+      transition: color 0.3s;
     }
 
-    .nav input {
-      padding: 5px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+    nav a:hover {
+      color: #2979ff;
     }
 
     /* HERO */
@@ -52,12 +51,13 @@
       justify-content: space-between;
       align-items: center;
       padding: 40px;
-      background: #e6f3fa;
+      background: #cde7f3;
       flex-wrap: wrap;
     }
 
     .hero-text {
       max-width: 500px;
+      animation: slideIn 1s ease-out;
     }
 
     .hero h1 {
@@ -76,107 +76,162 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
     }
 
     .hero-img img {
       max-width: 300px;
       width: 100%;
+      animation: float 3s ease-in-out infinite;
     }
 
-    /* DETECTAR */
-    .detectar {
+    /* BENEFICIOS */
+    .beneficios {
       background: #154a80;
       color: white;
       text-align: center;
       padding: 40px 20px;
     }
 
-    .detectar-contenido {
-      margin-top: 20px;
+    .beneficios h2 {
+      margin-bottom: 20px;
     }
 
-    .detectar img {
-      max-width: 150px;
-      margin-top: 20px;
-    }
-
-    /* SIMULACION */
-    .simulacion {
-      background: #f4a7a7;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    .simulacion-contenido {
+    .beneficios-cards {
       display: flex;
       justify-content: center;
       gap: 20px;
-      margin-top: 20px;
       flex-wrap: wrap;
     }
 
-    .simulacion img {
-      max-width: 250px;
-      width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    .card {
+      background: white;
+      color: black;
+      padding: 20px;
+      border-radius: 10px;
+      width: 250px;
+      transition: transform 0.3s;
     }
 
-    /* INTELIGENCIA ARTIFICIAL */
-    .ia {
-      background: #b6f5b1;
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card img {
+      max-width: 80px;
+      margin-bottom: 10px;
+    }
+
+    /* PASOS */
+    .pasos {
+      background: #cde7f3;
       padding: 40px 20px;
-    }
-
-    .ia-contenido {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .ia p {
-      max-width: 60%;
-    }
-
-    .ia img {
-      max-width: 200px;
-      width: 100%;
-    }
-
-    /* TIENDA */
-    .tienda {
-      background: #6c6464;
-      color: white;
       text-align: center;
-      padding: 40px 20px;
     }
 
-    .productos {
+    .pasos-contenido {
       display: flex;
       justify-content: center;
-      gap: 40px;
-      margin-top: 20px;
+      gap: 30px;
       flex-wrap: wrap;
     }
 
-    .producto img {
-      max-width: 120px;
-      border-radius: 8px;
+    .paso {
+      max-width: 220px;
+    }
+
+    .paso img {
+      max-width: 200px;
+      margin-bottom: 10px;
+    }
+
+    /* ESTADISTICAS */
+    .estadisticas {
+      background: #154a80;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .estadisticas-grid {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .box {
+      background: #ccc;
+      color: black;
+      padding: 20px;
+      border-radius: 10px;
+      min-width: 200px;
+    }
+
+    .contador {
+      font-size: 28px;
+      font-weight: bold;
+      background: red;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      display: inline-block;
+      margin: 10px 0;
+      animation: pulse 1s infinite;
+    }
+
+    /* CONTACTO */
+    .contacto {
+      background: #cde7f3;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .contacto-box {
+      max-width: 250px;
+      margin: 10px;
+    }
+
+    .contacto button {
+      margin-top: 20px;
+    }
+
+    /* ANIMACIONES */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
     }
   </style>
 </head>
 <body>
   <!-- HEADER -->
-  <header class="header">
+  <header>
     <div class="logo">Fraud Fighter</div>
-    <nav class="nav">
+    <nav>
       <a href="#">Inicio</a>
       <a href="#">Servicios</a>
       <a href="#">Acerca de</a>
       <a href="#">Contactos</a>
       <a href="#">Faq</a>
-      <input type="text" placeholder="🔍 Buscar...">
     </nav>
   </header>
 
@@ -184,63 +239,110 @@
   <section class="hero">
     <div class="hero-text">
       <h1>¿Cansado de recibir estafas telefónicas y no saber si son reales?</h1>
-      <p>Conoce sobre Fraud Fighter, una aplicación que utiliza Inteligencia Artificial para simular chats y llamadas en forma de estafa para aprender a detectar estas mismas en escenarios reales.</p>
+      <p>Conoce sobre Fraud Fighter, una aplicación que utiliza Inteligencia Artificial para simular chats y llamadas en forma de estafa para aprender a detectarlas en escenarios reales.</p>
       <button class="btn">Llévame allí</button>
     </div>
     <div class="hero-img">
-      <img src="Group 51.png" alt="Fraud Fighter Demo">
+      <img src="Group 51.png" alt="Fraud Fighter">
     </div>
   </section>
 
-  <!-- DETECTAR ESTAFAS -->
-  <section class="detectar">
-    <h2>Aprende a detectar estafas virtuales</h2>
-    <div class="detectar-contenido">
-      <p>Aprende sobre distintos tipos de estafas y prueba tu conocimiento sin miedo a equivocarte. Ponte a prueba en los simuladores</p>
-      <img src="icono_cs_estafador 1.png" alt="Detectar estafas">
+  <!-- BENEFICIOS -->
+  <section class="beneficios">
+    <h2>¿Sabías que las estafas virtuales son cada vez más comunes?</h2>
+    <div class="beneficios-cards">
+      <div class="card">
+        <img src="1f6e1 1.png" alt="Confianza">
+        <h3>Ganá confianza</h3>
+        <p>Maneja tu teléfono con tranquilidad</p>
+      </div>
+      <div class="card">
+        <img src="ejercicio-espanol-practicar 1.png" alt="Practica">
+        <h3>Practicá sin riesgos</h3>
+        <p>Entrena con escenarios reales</p>
+      </div>
+      <div class="card">
+        <img src="el_phishing 1.png" alt="Protegete">
+        <h3>Protégete</h3>
+        <p>Evita perder dinero o datos personales</p>
+      </div>
     </div>
   </section>
 
-  <!-- SIMULACION -->
-  <section class="simulacion">
-    <h2>Simulación de chats y llamadas</h2>
-    <div class="simulacion-contenido">
-      <img src="image 1.png" alt="Simulación de chat">
-      <img src="image 2.png" alt="Simulación de llamada">
+  <!-- PASOS -->
+  <section class="pasos">
+    <h2>¿Qué tan simple es protegerse?</h2>
+    <div class="pasos-contenido">
+      <div class="paso">
+        <img src="image 5.png" alt="Paso 1">
+        <h3>1. Elegí el caso</h3>
+        <p>Seleccioná un tipo de estafa</p>
+      </div>
+      <div class="paso">
+        <img src="image 6.png"alt="Paso 2">
+        <h3>2. Practicá</h3>
+        <p>Entrena con escenarios reales</p>
+      </div>
+      <div class="paso">
+        <img src="viejo-escribiendo-computadora-illustration-svg-download-png-7845504 1.png" alt="Paso 3">
+        <h3>3. Aprendé</h3>
+        <p>Evita perder dinero o datos personales</p>
+      </div>
     </div>
   </section>
 
-  <!-- INTELIGENCIA ARTIFICIAL -->
-  <section class="ia">
-    <h2>Utiliza una inteligencia artificial</h2>
-    <div class="ia-contenido">
-      <p>Fraud Fighter es una aplicación innovadora que utiliza inteligencia artificial para recrear de forma realista chats y llamadas de estafas telefónicas. A través de estas simulaciones, los usuarios pueden experimentar cómo actúan los estafadores, reconocer sus tácticas y aprender a detectar las señales de fraude antes de caer en la trampa.</p>
-      <img src="799-7998385_brain-cerebro-animado-psicologia-neuropsicologia-neuro-brain-flat 2.png" alt="Inteligencia Artificial">
+  <!-- ESTADISTICAS -->
+  <section class="estadisticas">
+    <h2>Estadística de estafas</h2>
+    <div class="estadisticas-grid">
+      <div class="box">Se aproxima que hay 2800 estafas por minuto</div>
+      <div>
+        <div class="contador" id="contador">0</div>
+        <div id="tiempo">00:00</div>
+      </div>
+      <div class="box">Nuestro foco es bajar este número significativamente</div>
     </div>
   </section>
 
-  <!-- TIENDA -->
-  <section class="tienda">
-    <h2>Tienda</h2>
-    <div class="productos">
-      <div class="producto">
-        <img src="image 4.png" alt="Buzo">
-        <p>35.000$</p>
-      </div>
-      <div class="producto">
-        <img src="Group 58.png" alt="Remera">
-        <p>15.000$</p>
-      </div>
-      <div class="producto">
-        <img src="Group 60.png" alt="Funda">
-        <p>5.000$</p>
-      </div>
-      <div class="producto">
-        <img src="Group 61.png" alt="Gorro">
-        <p>12.000$</p>
-      </div>
+  <!-- CONTACTO -->
+  <section class="contacto">
+    <div class="contacto-box">
+      <h3>Cómo contactarnos</h3>
+      <p>Correo: fraudfighter@gmail.com</p>
+      <p>Instagram: fraudfighter.ok</p>
+      <p>Tel: 11-5773-9174</p>
+    </div>
+    <div class="contacto-box">
+      <h3>Recordá mantenerte seguro</h3>
+      <p>Protege a tus seres queridos</p>
+    </div>
+    <div class="contacto-box">
+      <button class="btn">Empezar ahora</button>
     </div>
   </section>
+
+  <script>
+    let contador = 0;
+    let segundos = 0;
+    let minutos = 0;
+
+    function actualizarTiempo() {
+      segundos++;
+      if (segundos === 60) {
+        segundos = 0;
+        contador += 2800;
+        document.getElementById("contador").textContent = contador;
+      }
+      if (segundos === 0) {
+        minutos++;
+      }
+
+      let min = minutos < 10 ? "0" + minutos : minutos;
+      let sec = segundos < 10 ? "0" + segundos : segundos;
+      document.getElementById("tiempo").textContent = min + ":" + sec;
+    }
+
+    setInterval(actualizarTiempo, 1000);
+  </script>
 </body>
 </html>
-
